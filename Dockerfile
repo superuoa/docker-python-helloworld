@@ -1,4 +1,4 @@
-FROM registry.redhat.io/rhel9/python-39@sha256:4da8ddb12096a31d8d50e58ea479ba2fe2f252f215fbaf5bf90923a1827463ba
+FROM python:3.8-slim
 
 # Add requirements file in the container
 COPY requirements.txt ./requirements.txt
