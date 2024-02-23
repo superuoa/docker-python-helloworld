@@ -1,2 +1,18 @@
+# Print Hello from the current OS and architecture
+#
+# python hello_world.py
+
+
+import platform
+
+
 if __name__ == '__main__':
-    print('Hello Docker world! ทดสอบภาษาไทย')
+    # Get the operating system name
+    os_name = platform.system()
+
+    # Get the system's architecture
+    architecture = platform.architecture()
+
+    print(f"Hello Wordl! from {os_name} ทดสอบภาษาไทย")
+else:
+    pass
