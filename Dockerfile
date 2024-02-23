@@ -1,11 +1,11 @@
-FROM python:3.8-slim
+# Use an official Python runtime as a parent image
+FROM registry.redhat.io/rhel9/python-39@sha256:4da8ddb12096a31d8d50e58ea479ba2fe2f252f215fbaf5bf90923a1827463ba
 
-# Add requirements file in the container
-COPY requirements.txt ./requirements.txt
-RUN pip install -r requirements.txt
+# Set the working directory in the container
+WORKDIR /app
 
-# Add source code in the container
-COPY main.py ./main.py
+# Copy the local directory contents into the container at /app
+COPY . /app
 
-# Define container entry point (could also work with CMD python main.py)
-ENTRYPOINT ["python", "main.py"]
+# Run Python script when the container launches
+CMD ["python", "hello_world.py"]
